@@ -109,7 +109,7 @@ Released   : 20120210
 					echo "</form><br /><br />";
 				}
 				
-				date_default_timezone_set("EST");
+				date_default_timezone_set( "America/Detroit" );
 				echo "<p>Last logged in: " . date("r", $_SESSION["valid_time"] );
 				?>
 			</div>

@@ -20,7 +20,7 @@ Released   : 20120210
 
 <?php
 
-if ($_GET["op"] == "send")
+if ( isset( $_GET["op"] ) && $_GET["op"] == "send")
 {
 	// dBase file
 	include "dbConfig.php";

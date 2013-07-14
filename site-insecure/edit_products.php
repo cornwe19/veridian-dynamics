@@ -55,7 +55,7 @@ Released   : 20120210
 					Header("Location: index.php");
 				}
 				
-				if ($_GET["op"] == "update")
+				if ( isset( $_GET["op"] ) && $_GET["op"] == "update")
 				{
 					$bInputFlag = true;
 					
@@ -96,7 +96,7 @@ Released   : 20120210
 					echo "</form><br /><br />";
 				}
 				
-				elseif ($_GET["op"] == "delete")
+				elseif ( isset( $_GET["op"] ) && $_GET["op"] == "delete")
 				{
 					// Setup query
 					$query = "DELETE FROM `products` "
@@ -162,7 +162,10 @@ Released   : 20120210
 				<h3>Employees</h3>
 				<ol>
 				<?php
-				session_start();
+
+				if ( session_status() == PHP_SESSION_NONE ) {
+					session_start();
+				}
 				
 				if (isset($_SESSION["valid_admin"]) && $_SESSION["valid_admin"] == 1)
 				{

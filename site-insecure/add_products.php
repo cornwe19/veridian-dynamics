@@ -55,7 +55,7 @@ Released   : 20120210
 					Header("Location: index.php");
 				}
 				
-				if ($_GET["op"] == "create")
+				if ( isset( $_GET["op"] ) && $_GET["op"] == "create")
 				{
 					// Fields are clear, add user to database
 					// Setup query
@@ -99,7 +99,9 @@ Released   : 20120210
 				<h3>Employees</h3>
 				<ol>
 				<?php
-				session_start();
+				if ( session_status() == PHP_SESSION_NONE ) {
+					session_start();
+				}
 				
 				if (isset($_SESSION["valid_admin"]) && $_SESSION["valid_admin"] == 1)
 				{
