@@ -51,7 +51,7 @@ Released   : 20120210
 					Header("Location: login.php");
 				}
 				
-				if ($_GET["op"] == "update")
+				if ( isset( $_GET["op"] ) && $_GET["op"] == "update")
 				{
 					$bInputFlag = true;
 					
@@ -109,7 +109,8 @@ Released   : 20120210
 					echo "</form><br /><br />";
 				}
 				
-				echo "<p>Last logged in: " . date("r", $_SESSION["valid_time"]);
+				date_default_timezone_set("EST");
+				echo "<p>Last logged in: " . date("r", $_SESSION["valid_time"] );
 				?>
 			</div>
 			<!--<div class="box" id="content-box2">
@@ -122,7 +123,9 @@ Released   : 20120210
 				<h3>Employees</h3>
 				<ol>
 				<?php
-				session_start();
+				if (session_status() == PHP_SESSION_NONE) {
+ 					session_start();
+				}
 				
 				if (isset($_SESSION["valid_admin"]) && $_SESSION["valid_admin"] == 1)
 				{

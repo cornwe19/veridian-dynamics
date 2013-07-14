@@ -46,7 +46,7 @@ Released   : 20120210
 				// dBase file
 				include "dbConfig.php";
 
-				if ($_GET["op"] == "login")
+				if ( isset($_GET["op"]) && $_GET["op"] == "login")
 				{
 				        $user = $_POST["username"];
 				        $pass = $_POST["password"];
@@ -82,7 +82,7 @@ Released   : 20120210
 						}
 					}
 				}
-				elseif ($_GET["op"] == "registered")
+				elseif ( isset( $_GET["op"] ) && $_GET["op"] == "registered")
 				{
 					echo "Registration successful!<br />";
 				}
@@ -107,7 +107,6 @@ Released   : 20120210
 				<h3>Employees</h3>
 				<ol>
 				<?php
-				session_start();
 				
 				if (isset($_SESSION["valid_admin"]) && $_SESSION["valid_admin"] == 1)
 				{

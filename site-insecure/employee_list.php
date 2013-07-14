@@ -18,6 +18,10 @@ Released   : 20120210
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
+<?php
+session_start();
+?>
+
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
@@ -75,8 +79,6 @@ Released   : 20120210
 				<h3>Employees</h3>
 				<ol>
 				<?php
-				session_start();
-				
 				if (isset($_SESSION["valid_admin"]) && $_SESSION["valid_admin"] == 1)
 				{
 					echo "<li><a href=\"add_products.php\">Add Products</a></li>";
