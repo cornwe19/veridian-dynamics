@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `products`
 --
 
-CREATE TABLE IF NOT EXISTS `products` (
+DROP TABLE `products`;
+CREATE TABLE `products` (
   `id` int(10) NOT NULL auto_increment,
   `name` varchar(50) collate latin1_general_ci NOT NULL,
   `description` varchar(1000) collate latin1_general_ci NOT NULL,
@@ -56,7 +57,8 @@ INSERT INTO `products` (`id`, `name`, `description`, `cost`) VALUES
 -- Table structure for table `test`
 --
 
-CREATE TABLE IF NOT EXISTS `test` (
+DROP TABLE `test`;
+CREATE TABLE `test` (
   `id` int(10) NOT NULL auto_increment,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
@@ -67,7 +69,8 @@ CREATE TABLE IF NOT EXISTS `test` (
 -- Table structure for table `trashbin`
 --
 
-CREATE TABLE IF NOT EXISTS `trashbin` (
+DROP TABLE `trashbin`;
+CREATE TABLE `trashbin` (
   `id` int(10) NOT NULL auto_increment,
   `name` varchar(50) collate latin1_general_ci NOT NULL,
   `email` varchar(50) collate latin1_general_ci NOT NULL,
@@ -91,7 +94,8 @@ INSERT INTO `trashbin` (`id`, `name`, `email`, `subject`, `message`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+DROP TABLE `users`;
+CREATE TABLE `users` (
   `id` int(10) NOT NULL auto_increment,
   `username` varchar(30) collate latin1_general_ci NOT NULL,
   `password` char(30) collate latin1_general_ci NOT NULL,
